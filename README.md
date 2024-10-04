@@ -1,3 +1,13 @@
+# Notes
+
+
+To temporarily disable ssl on download
+```
+git config --global http.sslverify true
+```
+
+
+# Original README
 <div align="center">
 <h2>
 GigaPose: Fast and Robust Novel Object Pose Estimation 

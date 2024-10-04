@@ -1,13 +1,15 @@
-from omegaconf import DictConfig, OmegaConf
-import logging
 import os
-import os.path as osp
+
 import hydra
-from pathlib import Path
+from omegaconf import DictConfig, OmegaConf
+
 from src.utils.logging import get_logger
 
-logger = get_logger(__name__)
+# HACK: see: https://stackoverflow.com/a/76218591
+import os
+os.environ['CURL_CA_BUNDLE'] = ''
 
+logger = get_logger(__name__)
 
 def run_download(config: DictConfig) -> None:
     logger.info(f"Saving default detections to {config.data.test.dataloader.root_dir}/default_detections")
